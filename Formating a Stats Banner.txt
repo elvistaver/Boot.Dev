@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func main() {
+	const gameTitle = "Dungeon Runner"
+	const pointsSuffix = " pts"
+	player:= "Riley"
+	Level := 7
+	score := 1240
+
+	fmt.Printf("%s\n", gameTitle)
+	fmt.Printf("Player: %s (Level %d)\n", player, Level)
+	fmt.Printf("Score: %d %s\n",score, pointsSuffix)
+}
