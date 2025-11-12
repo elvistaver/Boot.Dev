@@ -1,0 +1,38 @@
+package main
+
+import "fmt"
+
+func main() {
+	var insufficientFundMessage string = "Purchase failed. Insufficient funds."
+	var purchaseSuccessMessage string = "Purchase successful."
+	var accountBalance float64 = 100.0
+	var bulkMessageCost float64 = 75.0
+	var isPremiumUser bool = true
+	var discountRate float64 = 0.10
+	var finalCost float64
+
+	
+
+	// 1️⃣ Set final cost to the bulkMessageCost
+
+	finalCost = bulkMessageCost
+
+	// 2️⃣ If the user is a premium user, apply the discount
+
+	if isPremiumUser {
+		finalCost = finalCost * (1 - discountRate)
+	}
+
+	// 3️⃣ Check if the user has enough funds
+
+	if accountBalance >= finalCost {
+		accountBalance = accountBalance - finalCost
+		fmt.Println(purchaseSuccessMessage)
+	} else {
+		fmt.Println(insufficientFundMessage)
+	}
+
+	
+
+	fmt.Println("Account balance:", accountBalance)
+}
